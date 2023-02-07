@@ -29,7 +29,9 @@ jobs:
       run: docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_TOKEN"
     #Download Earthly on runner
     - name: Download latest earthly
-      run: "sudo /bin/sh -c 'wget https://github.com/earthlEy/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+      run: earthly/actions-setup@v1
+      with:
+        version: 0.6.1
     - name: Earthly version
       run: earthly --version
     #Specify your own earthly command
