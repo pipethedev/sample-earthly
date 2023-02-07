@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./src ",
-    "test": "jest --testPathPattern=src/ --detectOpenHandles ",
-    "coverage": "jest --coverage"
+    "test": "./node_modules/.bin/jest --testPathPattern=src/ --detectOpenHandles ",
+    "coverage": "./node_modules/.bin/jest --coverage"
   },
   "author": "",
   "license": "ISC",
