@@ -16,6 +16,12 @@ jobs:
       FORCE_COLOR: 1
     steps:
     - uses: actions/checkout@v3
+    - name: 'Create env file'
+        run: |
+          touch .env
+          echo PORT=3000 >> .env
+          echo CR_PAT=${{ secrets.CR_PAT }} >> .env
+          cat .env
     - name: Put back the git branch into git (Earthly uses it for tagging)
       run: |
         branch=""
