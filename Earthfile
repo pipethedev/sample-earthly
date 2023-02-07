@@ -9,7 +9,7 @@ WORKDIR /app
 deps:
   COPY package.json yarn.lock .env ./ 
   COPY src src
-  RUN yarn install --production --forzen-lockfile && yarn cache clean && apt-get update && apt install -y nano ncdu
+  RUN yarn install --production --forzen-lockfile && yarn cache clean
 
 test:
   FROM +deps
