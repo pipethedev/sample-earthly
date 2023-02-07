@@ -30,8 +30,6 @@ jobs:
     #Download Earthly on runner
     - name: Download latest earthly
       run: earthly/actions-setup@v1
-      with:
-        version: 0.6.1
     - name: Earthly version
       run: earthly --version
     #Specify your own earthly command
