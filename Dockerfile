@@ -5,6 +5,7 @@ FROM node:16-alpine as serve
 WORKDIR /app
 
 ARG ENVIRONMENT
+
 ENV ENVIRONMENT=$ENVIRONMENT
 
 COPY package.json .

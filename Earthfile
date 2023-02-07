@@ -15,12 +15,12 @@ test:
   FROM +deps
   RUN yarn test # NOTE: these tests run but they do fail as expected based on how they're written. 
 
-docker:
+build:
   FROM +deps
 
   EXPOSE 3000
 
   ENTRYPOINT ["node", "src/app.js"]
 
-  SAVE IMAGE --push pipethedev/earthly-example
+  SAVE IMAGE --push ghcr.io/pipethedev/earthly-example:latest
 # End Earthfile
