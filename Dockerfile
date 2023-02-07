@@ -9,8 +9,11 @@ ARG ENVIRONMENT
 ENV ENVIRONMENT=$ENVIRONMENT
 
 COPY package.json .
+
 COPY yarn.lock .
+
 COPY .env .
+
 COPY src src
 
 # Only install necessary dependencies.
