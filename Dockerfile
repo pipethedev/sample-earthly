@@ -12,10 +12,8 @@ COPY yarn.lock .
 COPY .env .
 COPY src src
 
-# Only install necessary dependencies.
 RUN yarn install --production --frozen-lockfile && \
       yarn cache clean && \
-# Helpful utilities for exploring your container
       apt-get update && apt install -y nano ncdu
 
 # Expose server port
