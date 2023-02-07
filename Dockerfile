@@ -1,6 +1,6 @@
 # ==
 # Serve
-FROM node:16me-alpine as serve
+FROM node:16-alpine as serve
 
 WORKDIR /app
 
@@ -12,9 +12,9 @@ COPY yarn.lock .
 COPY .env .
 COPY src src
 
+# Only install necessary dependencies.
 RUN yarn install --production --frozen-lockfile && \
-      yarn cache clean && \
-      apt-get update && apt install -y nano ncdu
+      yarn cache clean
 
 # Expose server port
 EXPOSE 3000
